@@ -1,18 +1,184 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
+const base = import.meta.env.BASE_URL;
+
+const sections = [
+  {
+    title: 'About Me',
+    text: 'My personal journey, scientific interests, values, and the experiences that shaped my career.',
+    link: `${base}about/`,
+  },
+  {
+    title: 'Academic Profile',
+    text: 'Education, academic positions, teaching, service, leadership, and extracurricular contributions.',
+    link: `${base}academic/`,
+  },
+  {
+    title: 'Research',
+    text: 'Research projects, publications, presentations, scientific contributions, and ongoing work.',
+    link: `${base}research/`,
+  },
+  {
+    title: 'Curriculum Vitae',
+    text: 'A complete web-based CV with supporting links, certificates, and a downloadable PDF.',
+    link: `${base}cv/`,
+  },
+  {
+    title: 'Resources',
+    text: 'Shared datasets, experimental protocols, analysis workflows, code, and research materials.',
+    link: `${base}resources/`,
+  },
+  {
+    title: 'Contact',
+    text: 'Contact information and links for research collaboration, academic opportunities, and communication.',
+    link: `${base}contact/`,
+  },
+];
+
+const updates = [
+  {
+    type: 'Website',
+    title: 'Professional website launched',
+    text: 'This website is being developed as a central home for my research, academic work, resources, and projects.',
+  },
+  {
+    type: 'Current Research',
+    title: 'Huntingtin regulation and cellular function',
+    text: 'Investigating how kinase signaling influences huntingtin phosphorylation, protein interactions, and cellular pathways.',
+  },
+  {
+    type: 'Coming Soon',
+    title: 'Publications, awards, and project updates',
+    text: 'New publications, presentations, grants, awards, and research milestones will be shared here.',
+  },
+];
+
+const futureProjects = [
+  {
+    title: 'Education Platform',
+    text: 'An accessible online learning space for scientific education and research training.',
+  },
+  {
+    title: 'My Future Lab',
+    text: 'A future research platform presenting the laboratory’s vision, people, projects, and discoveries.',
+  },
+  {
+    title: 'Vlogs & Podcasts',
+    text: 'Personal stories covering science, travel, conversations, experiences, and life beyond the laboratory.',
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Rasika Rathnayake</h1>
-<p>PhD Candidate in Neuroscience</p>
-	</body>
-</html>
+<BaseLayout
+  title="Rasika Rathnayake"
+  description="Professional website of Rasika Rathnayake, neuroscience researcher and PhD candidate at the University at Buffalo."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">
+          Neuroscience • Molecular Biology • Scientific Discovery
+        </p>
+
+        <h1>Rasika Rathnayake</h1>
+
+        <p class="lead">
+          I am a PhD candidate at the University at Buffalo studying the
+          molecular mechanisms that regulate huntingtin function and cellular
+          health.
+        </p>
+
+        <p class="lead">
+          This website brings together my research, academic journey,
+          publications, resources, and future projects.
+        </p>
+
+        <div class="actions">
+          <a class="button" href={`${base}research/`}>
+            Explore my research
+          </a>
+
+          <a class="button secondary" href={`${base}about/`}>
+            Read my story
+          </a>
+        </div>
+      </div>
+
+      <div class="profile-placeholder" aria-label="Profile photo placeholder">
+        RR
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Latest activity</p>
+        <h2>Recent updates</h2>
+        <p>
+          Research progress, publications, awards, presentations, grants, and
+          other professional milestones.
+        </p>
+      </div>
+
+      <div class="grid">
+        {
+          updates.map((update) => (
+            <article class="card">
+              <span class="tag">{update.type}</span>
+              <h3>{update.title}</h3>
+              <p>{update.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Professional portfolio</p>
+        <h2>Explore my work</h2>
+      </div>
+
+      <div class="grid">
+        {
+          sections.map((section) => (
+            <article class="card">
+              <h3>{section.title}</h3>
+              <p>{section.text}</p>
+              <a href={section.link}>Explore section →</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Looking ahead</p>
+        <h2>Future projects</h2>
+        <p>
+          These projects will grow gradually as my research and professional
+          career develop.
+        </p>
+      </div>
+
+      <div class="grid">
+        {
+          futureProjects.map((project) => (
+            <article class="card">
+              <span class="tag">Planned</span>
+              <h3>{project.title}</h3>
+              <p>{project.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

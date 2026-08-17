@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Rasika Rathnayake',
+  description = 'Professional website of Rasika Rathnayake, PhD candidate and neuroscience researcher.',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname;
+const fullTitle =
+  title === 'Rasika Rathnayake'
+    ? title
+    : `${title} | Rasika Rathnayake`;
+
+const navigation = [
+  { name: 'Home', href: base },
+  { name: 'About', href: `${base}about/` },
+  { name: 'Academic', href: `${base}academic/` },
+  { name: 'Research', href: `${base}research/` },
+  { name: 'CV', href: `${base}cv/` },
+  { name: 'Resources', href: `${base}resources/` },
+  { name: 'Contact', href: `${base}contact/` },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" href={`${base}favicon.svg`} />
+
+    <title>{fullTitle}</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href={base}>
+          <span class="brand-mark">RR</span>
+
+          <span class="brand-text">
+            Rasika Rathnayake
+            <small>Neuroscience Researcher</small>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          {
+            navigation.map((item) => (
+              <a
+                href={item.href}
+                aria-current={
+                  currentPath === item.href ? 'page' : undefined
+                }
+              >
+                {item.name}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Rasika Rathnayake</strong><br />
+          Neuroscience • Research • Education
+        </div>
+
+        <div>
+          © {new Date().getFullYear()} Rasika Rathnayake
+          &nbsp;•&nbsp;
+          <a href={`${base}contact/`}>Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

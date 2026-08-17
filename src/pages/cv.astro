@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const cvSections = [
+  {
+    title: 'Research Experience',
+    text: 'Research appointments, laboratories, projects, responsibilities, scientific methods, and major contributions.',
+  },
+  {
+    title: 'Publications',
+    text: 'Peer-reviewed articles, manuscripts, preprints, book chapters, and other scholarly publications.',
+  },
+  {
+    title: 'Presentations',
+    text: 'Conference talks, posters, invited presentations, seminars, and research meetings.',
+  },
+  {
+    title: 'Grants and Awards',
+    text: 'Research funding, fellowships, scholarships, honors, travel awards, and academic recognition.',
+  },
+  {
+    title: 'Teaching and Mentoring',
+    text: 'Courses, teaching appointments, student supervision, laboratory instruction, and mentorship.',
+  },
+  {
+    title: 'Technical Skills',
+    text: 'Molecular biology, cell biology, microscopy, quantitative image analysis, proteomics, and data analysis.',
+  },
+  {
+    title: 'Leadership and Service',
+    text: 'Academic service, professional memberships, committees, outreach, volunteering, and leadership roles.',
+  },
+  {
+    title: 'Certifications and Training',
+    text: 'Professional certifications, workshops, specialized training, and verified supporting documents.',
+  },
+];
+---
+
+<BaseLayout
+  title="Curriculum Vitae"
+  description="Web-based curriculum vitae of Rasika Rathnayake with verified supporting links and downloadable PDF."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Experience and achievements</p>
+      <h1>Curriculum Vitae</h1>
+
+      <p class="lead">
+        A detailed online record of my education, research, publications,
+        professional experience, awards, skills, service, and training.
+      </p>
+
+      <div class="actions">
+        <a class="button" href="#web-cv">View web CV</a>
+        <span class="button secondary">Downloadable PDF coming soon</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="web-cv">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Education</p>
+        <h2>Academic qualifications</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">In progress</span>
+          <h3>Doctoral Degree</h3>
+          <p><strong>University at Buffalo</strong></p>
+          <p>PhD candidate conducting research in neuroscience.</p>
+        </article>
+
+        <article class="card">
+          <h3>Previous Degrees</h3>
+          <p>
+            Earlier degrees, institutions, dates, specializations, and
+            supporting verification links will be added here.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Verified Records</h3>
+          <p>
+            Degree certificates, transcripts where appropriate, institutional
+            profiles, and official verification links.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Professional record</p>
+        <h2>Experience and contributions</h2>
+      </div>
+
+      <div class="grid">
+        {
+          cvSections.map((section) => (
+            <article class="card">
+              <h3>{section.title}</h3>
+              <p>{section.text}</p>
+              <a href="#">Supporting records will be added →</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">Verification</p>
+      <h2>Original records and supporting links</h2>
+
+      <p>
+        CV entries can be connected to original journal articles, DOI records,
+        university pages, certificates, awards, presentation files, and other
+        official sources.
+      </p>
+
+      <p>
+        After the verified information is added, this page will also provide a
+        professionally formatted downloadable PDF version of the complete CV.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const projects = [
+  {
+    status: 'Current project',
+    title: 'Kinase regulation of huntingtin',
+    text: 'Investigating how ERK and GSK3β signaling influence huntingtin phosphorylation, protein interactions, and cellular functions.',
+  },
+  {
+    status: 'Current project',
+    title: 'Huntingtin fragments and cellular health',
+    text: 'Studying how C-terminal huntingtin fragments behave within cells and how they may influence protein clearance and cellular toxicity.',
+  },
+  {
+    status: 'Research approach',
+    title: 'Proteomics and quantitative imaging',
+    text: 'Combining mass spectrometry, molecular biology, biochemical assays, and quantitative microscopy to examine complex cellular mechanisms.',
+  },
+];
+
+const outputs = [
+  {
+    title: 'Peer-reviewed Publications',
+    text: 'Complete publication citations, abstracts, journal links, DOI links, and accessible files will be listed here.',
+  },
+  {
+    title: 'Preprints and Manuscripts',
+    text: 'Current manuscripts, preprints, and research work in preparation will be organized here.',
+  },
+  {
+    title: 'Presentations and Posters',
+    text: 'Conference presentations, invited talks, research posters, and academic seminars will be included here.',
+  },
+];
+---
+
+<BaseLayout
+  title="Research"
+  description="Research projects, publications, presentations, and scientific contributions of Rasika Rathnayake."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Research and discovery</p>
+      <h1>Understanding molecular mechanisms</h1>
+
+      <p class="lead">
+        My research examines how huntingtin is regulated within cells and how
+        changes in its phosphorylation, interactions, and processing may
+        influence cellular health.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Research interests</p>
+        <h2>Scientific focus</h2>
+
+        <p>
+          My work connects neuroscience, molecular biology, protein
+          regulation, cellular transport, proteostasis, microscopy, and
+          quantitative proteomics.
+        </p>
+      </div>
+
+      <div class="grid">
+        {
+          projects.map((project) => (
+            <article class="card">
+              <span class="tag">{project.status}</span>
+              <h3>{project.title}</h3>
+              <p>{project.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Research outputs</p>
+        <h2>Publications and presentations</h2>
+
+        <p>
+          Each publication will eventually include its original journal page,
+          DOI, PubMed record, supporting materials, and a short plain-language
+          summary.
+        </p>
+      </div>
+
+      <div class="grid">
+        {
+          outputs.map((output) => (
+            <article class="card">
+              <h3>{output.title}</h3>
+              <p>{output.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">Open science</p>
+      <h2>Data, methods, and research resources</h2>
+
+      <p>
+        Publicly shareable datasets, experimental protocols, analysis
+        workflows, diagrams, and reusable scientific resources will be
+        connected to their related research projects.
+      </p>
+
+      <a class="button" href={`${base}resources/`}>
+        View research resources
+      </a>
+    </div>
+  </section>
+</BaseLayout>

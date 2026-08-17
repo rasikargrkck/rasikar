@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const resources = [
+  {
+    type: 'Data',
+    title: 'Shared Datasets',
+    text: 'Publicly shareable experimental data, processed datasets, source tables, metadata, and documentation.',
+  },
+  {
+    type: 'Protocols',
+    title: 'Experimental Protocols',
+    text: 'Step-by-step laboratory methods, reagent information, optimization notes, and troubleshooting guidance.',
+  },
+  {
+    type: 'Analysis',
+    title: 'Analysis Workflows',
+    text: 'Workflows for microscopy, proteomics, statistical analysis, data visualization, and reproducible research.',
+  },
+  {
+    type: 'Code',
+    title: 'Scripts and Macros',
+    text: 'ImageJ/Fiji macros, R scripts, spreadsheet templates, and other reusable analysis tools.',
+  },
+  {
+    type: 'Education',
+    title: 'Teaching Materials',
+    text: 'Scientific diagrams, learning resources, presentations, tutorials, and training materials.',
+  },
+  {
+    type: 'Links',
+    title: 'Recommended Research Tools',
+    text: 'A curated collection of databases, software, online tools, and scientific resources.',
+  },
+];
+---
+
+<BaseLayout
+  title="Resources"
+  description="Shared scientific data, protocols, analysis workflows, code, and educational resources from Rasika Rathnayake."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Open and reusable science</p>
+      <h1>Research resources</h1>
+
+      <p class="lead">
+        A growing collection of datasets, experimental protocols, analysis
+        workflows, code, diagrams, and educational materials.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Resource library</p>
+        <h2>Explore available materials</h2>
+
+        <p>
+          Each resource will include a description, version, related
+          publication, usage instructions, citation information, and original
+          download link when available.
+        </p>
+      </div>
+
+      <div class="grid">
+        {
+          resources.map((resource) => (
+            <article class="card">
+              <span class="tag">{resource.type}</span>
+              <h3>{resource.title}</h3>
+              <p>{resource.text}</p>
+              <span>Resources will be added →</span>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Responsible sharing</p>
+        <h2>Documentation and citation</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Clear Documentation</h3>
+          <p>
+            Resources will include sufficient context, instructions, file
+            descriptions, and version information.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Permanent Records</h3>
+          <p>
+            Appropriate materials can be connected to GitHub, Zenodo, OSF, DOI
+            records, or institutional repositories.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Reuse and Attribution</h3>
+          <p>
+            Each item will clearly explain how it may be reused, modified,
+            shared, and cited.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

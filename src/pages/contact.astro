@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contactReasons = [
+  {
+    title: 'Research Collaboration',
+    text: 'Discuss scientific questions, collaborative research, methods, datasets, and potential projects.',
+  },
+  {
+    title: 'Academic Opportunities',
+    text: 'Connect regarding research positions, presentations, teaching, mentoring, and professional opportunities.',
+  },
+  {
+    title: 'Education and Communication',
+    text: 'Discuss educational projects, scientific communication, podcasts, interviews, and public engagement.',
+  },
+];
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact Rasika Rathnayake regarding research, collaboration, academic opportunities, and scientific communication."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Connect and collaborate</p>
+      <h1>Contact me</h1>
+
+      <p class="lead">
+        I welcome meaningful conversations about research, collaboration,
+        academic opportunities, education, and scientific communication.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Start a conversation</p>
+        <h2>How can we connect?</h2>
+      </div>
+
+      <div class="grid">
+        {
+          contactReasons.map((reason) => (
+            <article class="card">
+              <h3>{reason.title}</h3>
+              <p>{reason.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Contact channels</p>
+        <h2>Find me online</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Professional</span>
+          <h3>Email</h3>
+          <p>
+            Your preferred professional email address will be added here.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Professional network</span>
+          <h3>LinkedIn</h3>
+          <p>
+            Your LinkedIn profile and latest professional updates will be
+            connected here.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Code and projects</span>
+          <h3>GitHub</h3>
+          <p>
+            View website development, analysis resources, and future public
+            projects.
+          </p>
+
+          <a
+            href="https://github.com/rasikargrkck"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit GitHub profile →
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">Direct message</p>
+      <h2>Quick-contact options</h2>
+
+      <p>
+        A direct contact form and optional WhatsApp or Messenger buttons can be
+        activated after your preferred public contact information is
+        confirmed.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

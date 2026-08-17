@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const contributions = [
+  {
+    title: 'Scientific Presentations',
+    text: 'Conference presentations, research talks, committee presentations, posters, and seminars.',
+  },
+  {
+    title: 'Teaching and Mentoring',
+    text: 'Teaching experience, student training, research mentorship, and educational contributions.',
+  },
+  {
+    title: 'Academic Service',
+    text: 'Committee work, peer support, laboratory responsibilities, outreach, and professional service.',
+  },
+];
+
+const extracurriculars = [
+  {
+    title: 'Leadership',
+    text: 'Leadership roles within academic, research, student, and community organizations.',
+  },
+  {
+    title: 'Science Communication',
+    text: 'Making scientific knowledge understandable and accessible to broader audiences.',
+  },
+  {
+    title: 'Community and Personal Development',
+    text: 'Activities, interests, volunteering, and experiences that support growth beyond research.',
+  },
+];
+---
+
+<BaseLayout
+  title="Academic Profile"
+  description="Education, academic positions, contributions, and extracurricular activities of Rasika Rathnayake."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Education and contributions</p>
+      <h1>Academic profile</h1>
+
+      <p class="lead">
+        A record of my education, academic positions, teaching, mentorship,
+        professional service, and contributions beyond the laboratory.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Education</p>
+        <h2>Academic training</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          card">
+          <span class="tag">In progress</span>
+          <h3>PhD Candidate</h3>
+          <p><strong>University at Buffalo</strong></p>
+          <p>
+            Doctoral training focused on molecular and cellular neuroscience,
+            huntingtin biology, protein regulation, and cellular health.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Previous education</span>
+          <h3>Higher Education</h3>
+          <p>
+            Previous degrees, institutions, research training, dates, and
+            academic achievements will be added here.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Professional learning</span>
+          <h3>Additional Training</h3>
+          <p>
+            Workshops, certifications, technical training, short courses, and
+            professional development programs.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Experience</p>
+        <h2>Academic positions</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Current</span>
+          <h3>Doctoral Researcher</h3>
+          <p><strong>University at Buffalo</strong></p>
+          <p>
+            Conducting dissertation research, designing experiments, analyzing
+            scientific data, presenting findings, and contributing to
+            collaborative research.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Teaching and Mentoring</h3>
+          <p>
+            Teaching appointments, courses, student supervision, laboratory
+            training, and mentoring experience will be documented here.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Previous Positions</h3>
+          <p>
+            Earlier academic, research, professional, and volunteer positions
+            will be added in chronological order.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Academic community</p>
+        <h2>Contributions and service</h2>
+      </div>
+
+      <div class="grid">
+        {
+          contributions.map((item) => (
+            <article class="card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Beyond coursework</p>
+        <h2>Extracurricular activities</h2>
+      </div>
+
+      <div class="grid">
+        {
+          extracurriculars.map((item) => (
+            <article class="card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
