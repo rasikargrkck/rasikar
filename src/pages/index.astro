@@ -3,182 +3,330 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL;
 
-const sections = [
+const expertise = [
+  { label: 'Neurodegeneration', tone: 'cyan' },
+  { label: 'Huntingtin Biology', tone: 'violet' },
+  { label: 'Kinase Signaling', tone: 'lime' },
+  { label: 'Cell Biology', tone: 'amber' },
+  { label: 'Proteomics', tone: 'blue' },
+  { label: 'Fluorescence Microscopy', tone: 'pink' },
+];
+
+const professionalLinks = [
+  { label: 'LinkedIn', mark: 'in', href: 'https://www.linkedin.com/in/rasikarr/' },
+  { label: 'Google Scholar', mark: 'GS', href: 'https://scholar.google.com/citations?user=hDazJfwAAAAJ&hl=en' },
+  { label: 'ORCID', mark: 'iD', href: 'https://orcid.org/0000-0001-9667-8761' },
+  { label: 'ResearchGate', mark: 'RG', href: 'https://www.researchgate.net/profile/Rasika_Rathnayake2' },
+  { label: 'GitHub', mark: 'GH', href: 'https://github.com/rasikarrgkck' },
+  { label: 'Email', mark: '@', href: 'mailto:rasikara@buffalo.edu' },
+  { label: 'Facebook', mark: 'f', href: 'https://www.facebook.com/rasikargr/' },
+];
+
+const latestUpdates = [
+  { date: 'May 2026', text: 'Served on the Mark Diamond Research Fund Review Council', tone: 'cyan' },
+  { date: 'Jan 2026', text: 'Presented huntingtin S13/S16 research at the Biological Sciences Research Symposium', tone: 'violet' },
+  { date: 'Apr 2025', text: 'Published ERK1/GSK3β huntingtin study in Cell Death & Disease', tone: 'amber' },
+];
+
+const updateGroups = [
   {
-    title: 'About Me',
-    text: 'My personal journey, scientific interests, values, and the experiences that shaped my career.',
-    link: `${base}about/`,
+    title: 'Publications',
+    icon: '▤',
+    tone: 'cyan',
+    items: [
+      {
+        date: '2026',
+        title: 'Huntingtin S13/S16 phosphorylation study',
+        description: 'Manuscript examining effects on axonal transport and cell death; currently in review.',
+        href: `${base}research/`,
+      },
+      {
+        date: 'Apr 2025',
+        title: 'Opposing roles of GSK3β and ERK1',
+        description: 'Open-access study of huntingtin phosphorylation in neuronal dysfunction and cell death.',
+        href: 'https://www.nature.com/articles/s41419-025-07524-0',
+      },
+    ],
   },
   {
-    title: 'Academic Profile',
-    text: 'Education, academic positions, teaching, service, leadership, and extracurricular contributions.',
-    link: `${base}academic/`,
+    title: 'Presentations & Talks',
+    icon: '◉',
+    tone: 'violet',
+    items: [
+      {
+        date: 'Jan 2026',
+        title: 'Biological Sciences Research Symposium',
+        description: 'Presented how S13/S16 phosphorylation of huntingtin influences transport and cell death.',
+        href: `${base}research/`,
+      },
+      {
+        date: 'Nov 2025',
+        title: '18th Annual Neuroscience Research Day',
+        description: 'Presented current work on huntingtin phosphorylation and neuronal function.',
+        href: `${base}research/`,
+      },
+    ],
   },
   {
-    title: 'Research',
-    text: 'Research projects, publications, presentations, scientific contributions, and ongoing work.',
-    link: `${base}research/`,
-  },
-  {
-    title: 'Curriculum Vitae',
-    text: 'A complete web-based CV with supporting links, certificates, and a downloadable PDF.',
-    link: `${base}cv/`,
-  },
-  {
-    title: 'Resources',
-    text: 'Shared datasets, experimental protocols, analysis workflows, code, and research materials.',
-    link: `${base}resources/`,
-  },
-  {
-    title: 'Contact',
-    text: 'Contact information and links for research collaboration, academic opportunities, and communication.',
-    link: `${base}contact/`,
+    title: 'Awards & Grants',
+    icon: '✦',
+    tone: 'amber',
+    items: [
+      {
+        date: 'Jan 2026',
+        title: 'Second Runner-Up, Best Talk',
+        description: 'Recognized at the University at Buffalo Biological Sciences Research Symposium.',
+        href: `${base}academic/`,
+      },
+      {
+        date: '2025–2026',
+        title: 'Mark Diamond Research Fund',
+        description: 'Awarded $5,000 in research support from the University at Buffalo.',
+        href: `${base}academic/`,
+      },
+    ],
   },
 ];
 
-const updates = [
+const researchFeatures = [
   {
-    type: 'Website',
-    title: 'Professional website launched',
-    text: 'This website is being developed as a central home for my research, academic work, resources, and projects.',
+    eyebrow: 'Signaling & HTT phosphorylation',
+    title: 'How kinase signaling shapes huntingtin function',
+    description: 'Investigating ERK- and GSK3β-regulated phosphorylation, proteomic changes, axonal transport, and neuronal health.',
+    image: `${base}images/protein-signaling.svg`,
+    href: `${base}research/`,
   },
   {
-    type: 'Current Research',
-    title: 'Huntingtin regulation and cellular function',
-    text: 'Investigating how kinase signaling influences huntingtin phosphorylation, protein interactions, and cellular pathways.',
-  },
-  {
-    type: 'Coming Soon',
-    title: 'Publications, awards, and project updates',
-    text: 'New publications, presentations, grants, awards, and research milestones will be shared here.',
+    eyebrow: 'HTT cell biology & neurodegeneration',
+    title: 'How huntingtin fragments disrupt cellular clearance',
+    description: 'Studying aggregation, protein quality-control pathways, ubiquitin-proteasome function, autophagy, and cellular toxicity.',
+    image: `${base}images/neuron-cell.svg`,
+    href: `${base}research/`,
   },
 ];
 
-const futureProjects = [
+const academicSnapshot = [
   {
-    title: 'Education Platform',
-    text: 'An accessible online learning space for scientific education and research training.',
+    degree: 'BSc (Hons.)',
+    field: 'Molecular Biology & Biotechnology',
+    institution: 'University of Peradeniya',
+    tone: 'cyan',
   },
   {
-    title: 'My Future Lab',
-    text: 'A future research platform presenting the laboratory’s vision, people, projects, and discoveries.',
+    degree: 'MSc',
+    field: 'Biological Sciences',
+    institution: 'University at Buffalo',
+    tone: 'violet',
   },
   {
-    title: 'Vlogs & Podcasts',
-    text: 'Personal stories covering science, travel, conversations, experiences, and life beyond the laboratory.',
+    degree: 'PhD Candidate',
+    field: 'Biological Sciences',
+    institution: 'University at Buffalo · Gunawardena Laboratory',
+    tone: 'amber',
   },
 ];
 ---
 
 <BaseLayout
   title="Rasika Rathnayake"
-  description="Professional website of Rasika Rathnayake, neuroscience researcher and PhD candidate at the University at Buffalo."
+  description="Rasika Rathnayake is a PhD candidate at the University at Buffalo researching huntingtin biology, kinase signaling, neurodegeneration, and cellular protein-clearance pathways."
 >
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">
-          Neuroscience • Molecular Biology • Scientific Discovery
-        </p>
+  <div class="home-page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-portrait-wrap">
+          <div class="portrait-orbit" aria-hidden="true"></div>
+          <img
+            class="hero-portrait"
+            src={`${base}images/rasika-hero-tshirt-natural.png`}
+            alt="Professional portrait of Rasika Rathnayake"
+            width="1122"
+            height="1402"
+          />
 
-        <h1>Rasika Rathnayake</h1>
+          <div class="social-row" aria-label="Professional and social profiles">
+            {
+              professionalLinks.map((link) => (
+                <a href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                  <span class="social-mark">{link.mark}</span>
+                  <span>{link.label}</span>
+                </a>
+              ))
+            }
+          </div>
+        </div>
 
-        <p class="lead">
-          I am a PhD candidate at the University at Buffalo studying the
-          molecular mechanisms that regulate huntingtin function and cellular
-          health.
-        </p>
+        <div class="hero-copy">
+          <p class="eyebrow">Neuroscience · Molecular Biology · Scientific Discovery</p>
+          <h1 id="hero-title">Rasika Rathnayake</h1>
+          <p class="hero-role">PhD Candidate <span>•</span> University at Buffalo</p>
+          <p class="hero-field">Neuroscience & Molecular Biology</p>
 
-        <p class="lead">
-          This website brings together my research, academic journey,
-          publications, resources, and future projects.
-        </p>
+          <p class="hero-summary">
+            I investigate how kinase signaling and phosphorylation regulate
+            huntingtin function, axonal transport, protein aggregation, and
+            cellular pathways involved in neurodegeneration.
+          </p>
 
-        <div class="actions">
-          <a class="button" href={`${base}research/`}>
-            Explore my research
-          </a>
+          <div class="actions">
+            <a class="button primary" href={`${base}research/`}>Explore My Research <span aria-hidden="true">→</span></a>
+            <a class="button secondary" href={`${base}files/Rasika_Rathnayake_CV_May_2026.pdf`} target="_blank">View / Download CV <span aria-hidden="true">↓</span></a>
+          </div>
 
-          <a class="button secondary" href={`${base}about/`}>
-            Read my story
-          </a>
+          <div class="expertise-list" aria-label="Research expertise">
+            {
+              expertise.map((item) => (
+                <a class={`expertise-chip ${item.tone}`} href={`${base}research/`}>
+                  <span class="chip-dot" aria-hidden="true"></span>
+                  {item.label}
+                </a>
+              ))
+            }
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="profile-placeholder" aria-label="Profile photo placeholder">
-        RR
-      </div>
-    </div>
-  </section>
+    <section
+      class="current-research"
+      aria-labelledby="current-research-title"
+      style={`--panel-art: url("${base}images/neuron-cell.svg")`}
+    >
+      <div class="container current-research-inner">
+        <div class="research-heading">
+          <span class="research-icon" aria-hidden="true">✣</span>
+          <div>
+            <p class="eyebrow">Current research</p>
+            <h2 id="current-research-title">Neurodegeneration & Huntingtin Biology</h2>
+          </div>
+        </div>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">Latest activity</p>
-        <h2>Recent updates</h2>
-        <p>
-          Research progress, publications, awards, presentations, grants, and
-          other professional milestones.
-        </p>
-      </div>
+        <ul>
+          <li>Kinase regulation of HTT phosphorylation</li>
+          <li>HTT transport, aggregation & protein clearance</li>
+        </ul>
 
-      <div class="grid">
-        {
-          updates.map((update) => (
-            <article class="card">
-              <span class="tag">{update.type}</span>
-              <h3>{update.title}</h3>
-              <p>{update.text}</p>
-            </article>
-          ))
-        }
+        <a class="text-link" href={`${base}research/`}>View research <span aria-hidden="true">→</span></a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">Professional portfolio</p>
-        <h2>Explore my work</h2>
-      </div>
+    <section class="section updates-section" aria-labelledby="updates-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Latest activity</p>
+          <h2 id="updates-title">Recent updates</h2>
+        </div>
 
-      <div class="grid">
-        {
-          sections.map((section) => (
-            <article class="card">
-              <h3>{section.title}</h3>
-              <p>{section.text}</p>
-              <a href={section.link}>Explore section →</a>
-            </article>
-          ))
-        }
-      </div>
-    </div>
-  </section>
+        <div class="updates-timeline" aria-label="Latest professional updates">
+          {
+            latestUpdates.map((update) => (
+              <article class={`timeline-item ${update.tone}`}>
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <p><time>{update.date}</time> — {update.text}</p>
+              </article>
+            ))
+          }
+        </div>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">Looking ahead</p>
-        <h2>Future projects</h2>
-        <p>
-          These projects will grow gradually as my research and professional
-          career develop.
-        </p>
-      </div>
+        <div class="update-grid">
+          {
+            updateGroups.map((group) => (
+              <article class={`update-card ${group.tone}`}>
+                <header>
+                  <span aria-hidden="true">{group.icon}</span>
+                  <h3>{group.title}</h3>
+                </header>
 
-      <div class="grid">
-        {
-          futureProjects.map((project) => (
-            <article class="card">
-              <span class="tag">Planned</span>
-              <h3>{project.title}</h3>
-              <p>{project.text}</p>
-            </article>
-          ))
-        }
+                <div class="update-card-items">
+                  {
+                    group.items.map((item) => (
+                      <div class="update-entry">
+                        <p class="entry-date">{item.date}</p>
+                        <h4>{item.title}</h4>
+                        <p>{item.description}</p>
+                        <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} aria-label={`Read more about ${item.title}`}>↗</a>
+                      </div>
+                    ))
+                  }
+                </div>
+              </article>
+            ))
+          }
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section featured-section" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2 id="featured-title">Featured research</h2>
+        </div>
+
+        <div class="feature-grid">
+          {
+            researchFeatures.map((feature) => (
+              <article class="feature-card">
+                <img src={feature.image} alt="" loading="lazy" />
+                <div class="feature-copy">
+                  <p class="eyebrow">{feature.eyebrow}</p>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                  <a href={feature.href} aria-label={`Explore ${feature.title}`}>↗</a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="center-action">
+          <a class="button secondary" href={`${base}research/`}>Explore All Research <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section academic-section" aria-labelledby="academic-title">
+      <div class="container">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Academic snapshot</p>
+          <h2 id="academic-title">Training across molecular and biological sciences</h2>
+        </div>
+
+        <div class="academic-grid">
+          {
+            academicSnapshot.map((item) => (
+              <article class={`academic-card ${item.tone}`}>
+                <span class="academic-icon" aria-hidden="true">⌁</span>
+                <div>
+                  <h3>{item.degree}</h3>
+                  <p>{item.field}</p>
+                  <small>{item.institution}</small>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <a class="text-link academic-link" href={`${base}academic/`}>View academic profile <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section
+      class="contact-invitation"
+      aria-labelledby="contact-title"
+      style={`--panel-art: url("${base}images/neuron-cell.svg")`}
+    >
+      <div class="container contact-panel">
+        <div>
+          <p class="eyebrow">Let’s connect</p>
+          <h2 id="contact-title">Interested in my research, postdoctoral opportunities, or scientific collaboration?</h2>
+        </div>
+
+        <div class="actions">
+          <a class="button primary" href="mailto:rasikara@buffalo.edu">Email Me <span aria-hidden="true">✉</span></a>
+          <a class="button secondary" href={`${base}contact/`}>Contact Page <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

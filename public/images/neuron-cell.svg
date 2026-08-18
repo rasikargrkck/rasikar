@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-label="Abstract neuron illustration">
+  <defs>
+    <radialGradient id="bg" cx="62%" cy="50%" r="70%"><stop offset="0" stop-color="#122345"/><stop offset="1" stop-color="#020914"/></radialGradient>
+    <radialGradient id="soma"><stop stop-color="#ff79c6"/><stop offset=".42" stop-color="#235aa0"/><stop offset="1" stop-color="#0bd4df"/></radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="500" fill="url(#bg)"/>
+  <g fill="none" stroke="#17c8e0" stroke-linecap="round" opacity=".72">
+    <path d="M588 246C482 200 392 115 276 74M531 211c-64-89-76-150-39-211M566 285c-105 65-177 121-251 213M621 286c42 93 113 155 231 189M652 231c92-30 158-92 230-185M655 266c93 19 163 53 245 126" stroke-width="7"/>
+    <path d="M425 157c-69 4-126-18-184-73M418 149c-18-57-14-99 4-143M389 374c-56-9-102 3-149 41M756 384c42-12 85-2 134 28M773 115c35-1 69-15 105-48" stroke-width="3"/>
+  </g>
+  <g filter="url(#glow)">
+    <path d="M529 176c42-44 119-34 151 20 35 58 2 132-63 152-62 19-127-23-131-88-3-32 13-62 43-84Z" fill="url(#soma)" opacity=".9"/>
+    <circle cx="587" cy="252" r="22" fill="#d8fbff" opacity=".8"/>
+    <circle cx="587" cy="252" r="7" fill="#ff70c3"/>
+  </g>
+  <g fill="#19d7e8" opacity=".72"><circle cx="276" cy="74" r="5"/><circle cx="315" cy="498" r="4"/><circle cx="852" cy="475" r="5"/><circle cx="882" cy="46" r="4"/><circle cx="240" cy="415" r="4"/></g>
+</svg>

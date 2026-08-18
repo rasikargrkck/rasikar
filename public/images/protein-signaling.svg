@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-label="Abstract protein signaling illustration">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0" stop-color="#112746"/>
+      <stop offset="1" stop-color="#020914"/>
+    </radialGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#19e1d0"/>
+      <stop offset="1" stop-color="#087d91"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f06cff"/>
+      <stop offset="1" stop-color="#6036aa"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="500" fill="url(#bg)"/>
+  <g opacity=".35" stroke="#1ed7eb" stroke-width="1">
+    <path d="M20 76 145 133 247 55 344 119 459 43 580 98 696 42 868 113" fill="none"/>
+    <path d="M42 420 168 344 289 422 399 357 532 439 671 348 860 416" fill="none"/>
+  </g>
+  <g fill="#21d9eb" opacity=".6">
+    <circle cx="145" cy="133" r="4"/><circle cx="247" cy="55" r="3"/><circle cx="344" cy="119" r="4"/><circle cx="580" cy="98" r="3"/><circle cx="168" cy="344" r="3"/><circle cx="399" cy="357" r="4"/><circle cx="671" cy="348" r="4"/>
+  </g>
+  <path d="M110 310c36-126 84-177 161-131 71 42 76 152 7 191-59 34-134 0-119-73 14-70 97-111 145-58 57 63 8 172-80 168-104-4-159-126-93-215" fill="none" stroke="url(#cyan)" stroke-width="25" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M507 337c-46-92-20-181 63-191 71-8 129 60 94 122-28 51-104 49-126 1-27-58 30-128 94-100 72 31 59 146-16 180-63 29-130-10-143-69" fill="none" stroke="url(#purple)" stroke-width="22" stroke-linecap="round" filter="url(#glow)"/>
+  <g fill="#d2fbff" filter="url(#glow)"><circle cx="386" cy="242" r="6"/><circle cx="458" cy="294" r="5"/><circle cx="726" cy="203" r="4"/></g>
+</svg>
